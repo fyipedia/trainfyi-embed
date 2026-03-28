@@ -1,0 +1,43 @@
+{
+  "name": "trainfyi-embed",
+  "version": "1.0.0",
+  "description": "Embed TrainFYI widgets — station cards, search, comparisons, amenity badges. 51,425 stations. Zero dependencies, Shadow DOM, 4 themes.",
+  "main": "dist/embed.min.js",
+  "module": "dist/embed.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "train",
+    "railway",
+    "station",
+    "rail",
+    "operator",
+    "transit",
+    "route",
+    "embed",
+    "widget",
+    "trainfyi",
+    "trainfyi.com",
+    "shadow-dom",
+    "zero-dependencies",
+    "fyipedia",
+    "transportfyi"
+  ],
+  "homepage": "https://widget.trainfyi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyipedia/trainfyi-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/fyipedia/trainfyi-embed/issues"
+  },
+  "license": "MIT",
+  "author": "FYIPedia <dev@fyipedia.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}
