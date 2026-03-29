@@ -1,0 +1,26 @@
+# TrainFYI Embed Widget
+
+> Embeddable TrainFYI widgets for any website. Zero dependencies, Shadow DOM isolation, 4 themes (light/dark/sepia/auto).
+
+## Quick Start
+
+Add to any HTML page:
+- Script: <script src="https://cdn.jsdelivr.net/npm/trainfyi-embed@1/dist/embed.min.js"></script>
+
+## Links
+
+- Main site: https://trainfyi.com
+- Widget docs: https://widget.trainfyi.com
+- npm: https://www.npmjs.com/package/trainfyi-embed
+- GitHub: https://github.com/fyipedia/trainfyi-embed
+- API: https://trainfyi.com/developers/
+
+## Transport FYI Widget Family
+
+- [AirportFYI Widget](https://widget.airportfyi.com)
+- [AirlineFYI Widget](https://widget.airlinefyi.com)
+- [PlaneFYI Widget](https://widget.planefyi.com)
+
+## Part of FYIPedia
+
+Open-source developer tools ecosystem — https://fyipedia.com
