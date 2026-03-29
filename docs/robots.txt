@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# TrainFYI Embed Widget
+# Main site: https://trainfyi.com
+# Widget docs: https://widget.trainfyi.com
+# npm: https://www.npmjs.com/package/trainfyi-embed
