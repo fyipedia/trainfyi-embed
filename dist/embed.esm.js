@@ -371,7 +371,7 @@ function renderError(container, message, config) {
   container.innerHTML = `
     <div class="transportfyi-error">
       <p>${message}</p>
-      <a href="https://${config.domain}" target="_blank" rel="noopener">
+      <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">
         Visit ${config.name}
       </a>
     </div>
@@ -379,7 +379,7 @@ function renderError(container, message, config) {
 }
 var externalLinkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 function poweredByHTML(config) {
-  return `<span class="transportfyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="noopener">${config.name}</a></span>`;
+  return `<span class="transportfyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">${config.name}</a></span>`;
 }
 
 // src/api.ts
@@ -533,7 +533,7 @@ function renderAirportCard(data, config) {
       ${kvRow("Region", regionName)}
       ${elevationFt != null ? kvRow("Elevation", `${fmtNum(elevationFt)} ft`) : ""}
     </div>
-    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -571,7 +571,7 @@ function renderAirlineCard(data, config) {
       ${statCell(fmtNum(destCount) || "0", "Destinations")}
       ${statCell(fmtNum(countryCount) || "0", "Countries")}
     </div>
-    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -662,7 +662,7 @@ function renderAircraftCard(data, config) {
       ${engineModel ? kvRow("Engine Model", engineModel) : ""}
       ${firstFlight ? kvRow("First Flight", firstFlight) : ""}
     </div>
-    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -725,7 +725,7 @@ function renderStationCard(data, config) {
       ${yearOpened != null ? kvRow("Opened", String(yearOpened)) : ""}
       ${popularityScore > 0 ? kvRow("Popularity", String(popularityScore)) : ""}
     </div>
-    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
+    <div class="transportfyi-view-link"><a href="${detailUrl}" target="_blank" rel="nofollow noopener">View on ${esc(config.name)} ${externalLinkIcon}</a></div>
     ${poweredByHTML(config)}
   `;
 }
@@ -780,7 +780,7 @@ function initEntityWidget(el, config) {
         html = `
             <div style="padding:16px;">
               <div style="font-size:1rem;font-weight:600;margin-bottom:8px;">${esc(name)}</div>
-              <a href="https://${config.domain}" target="_blank" rel="noopener"
+              <a href="https://${config.domain}" target="_blank" rel="nofollow noopener"
                  style="color:${config.accent};text-decoration:none;font-size:0.85rem;">
                 View on ${esc(config.name)} ${externalLinkIcon}
               </a>
@@ -909,8 +909,8 @@ function initCompareWidget(el, config) {
           </table>
         </div>
         <div style="display:flex;gap:8px;padding:8px 16px;">
-          <a href="${esc(urlA)}" target="_blank" rel="noopener" style="flex:1;text-align:center;color:var(--link);font-size:12px;text-decoration:none;">${esc(nameA)} ${externalLinkIcon}</a>
-          <a href="${esc(urlB)}" target="_blank" rel="noopener" style="flex:1;text-align:center;color:var(--link);font-size:12px;text-decoration:none;">${esc(nameB)} ${externalLinkIcon}</a>
+          <a href="${esc(urlA)}" target="_blank" rel="nofollow noopener" style="flex:1;text-align:center;color:var(--link);font-size:12px;text-decoration:none;">${esc(nameA)} ${externalLinkIcon}</a>
+          <a href="${esc(urlB)}" target="_blank" rel="nofollow noopener" style="flex:1;text-align:center;color:var(--link);font-size:12px;text-decoration:none;">${esc(nameB)} ${externalLinkIcon}</a>
         </div>
         ${poweredByHTML(config)}
       `;
@@ -1009,7 +1009,7 @@ function initSearchWidget(el, config) {
     ).then((resp) => {
       const items = resp.results || [];
       if (!items.length) {
-        results.innerHTML = `<div style="padding:8px 0;color:var(--muted);font-size:12px;">No results. <a href="https://${config.domain}${config.searchPath}?q=${encodeURIComponent(q)}" target="_blank" rel="noopener" style="color:var(--link);">Search on ${esc(config.name)}</a></div>`;
+        results.innerHTML = `<div style="padding:8px 0;color:var(--muted);font-size:12px;">No results. <a href="https://${config.domain}${config.searchPath}?q=${encodeURIComponent(q)}" target="_blank" rel="nofollow noopener" style="color:var(--link);">Search on ${esc(config.name)}</a></div>`;
         return;
       }
       results.innerHTML = items.map((item) => {
@@ -1019,13 +1019,13 @@ function initSearchWidget(el, config) {
         const sub = getSubtitle(config, item);
         return `
             <div class="transportfyi-result-item">
-              <a href="${esc(url)}" target="_blank" rel="noopener" class="transportfyi-result-title" style="color:var(--link);text-decoration:none;">${esc(name)}</a>
+              <a href="${esc(url)}" target="_blank" rel="nofollow noopener" class="transportfyi-result-title" style="color:var(--link);text-decoration:none;">${esc(name)}</a>
               ${sub ? `<div class="transportfyi-result-meta">${esc(sub)}</div>` : ""}
             </div>
           `;
       }).join("");
     }).catch(() => {
-      results.innerHTML = `<div style="padding:8px 0;color:var(--muted);font-size:12px;">Search failed. <a href="https://${config.domain}${config.searchPath}?q=${encodeURIComponent(q)}" target="_blank" rel="noopener" style="color:var(--link);">Try on ${esc(config.name)}</a></div>`;
+      results.innerHTML = `<div style="padding:8px 0;color:var(--muted);font-size:12px;">Search failed. <a href="https://${config.domain}${config.searchPath}?q=${encodeURIComponent(q)}" target="_blank" rel="nofollow noopener" style="color:var(--link);">Try on ${esc(config.name)}</a></div>`;
     });
   });
 }
